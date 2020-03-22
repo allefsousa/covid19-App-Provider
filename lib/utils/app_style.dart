@@ -12,6 +12,9 @@ class AppStyle {
     fontSize: 30,
     fontWeight: FontWeight.bold,
   );
+  static TextStyle commonTitle = TextStyle(
+    fontSize: 14,
+  );
   static TextStyle stdtw = TextStyle(color: AppStyle.txw);
   static TextStyle stdtr = TextStyle(color: AppStyle.txr);
   static TextStyle stdtb = TextStyle(fontWeight: FontWeight.bold);

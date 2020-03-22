@@ -1,4 +1,5 @@
 import 'package:covid19/utils/app_style.dart';
+import 'package:covid19/utils/fade_route.dart';
 import 'package:flutter/material.dart';
 
 import 'about_page.dart';
@@ -19,7 +20,7 @@ class _HomePageState extends State<HomePage> {
         actions: <Widget>[
           IconButton(icon: Icon(Icons.info_outline),
               onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder:(BuildContext context) => AboutPage()),
+                Navigator.push(context, FadeRoute(page: AboutPage()),
                 );
               })
         ],
