@@ -30,7 +30,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Covid-19',
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),

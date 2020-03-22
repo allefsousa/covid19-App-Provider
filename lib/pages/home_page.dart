@@ -25,7 +25,15 @@ class _HomePageState extends State<HomePage> {
               })
         ],
       ),
-      body: Center(), // This trailing comma makes auto-formatting nicer for build methods.
+      body: Container(
+        color: AppStyle.bg,
+        padding: EdgeInsets.all(15),
+        child: ListView(
+          children: <Widget>[
+
+          ],
+        ),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

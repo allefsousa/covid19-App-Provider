@@ -18,7 +18,7 @@ class _AboutPageState extends State<AboutPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("About",style: TextStyle(fontSize: 14.0),),
+        title: Text("About"),
         backgroundColor: AppStyle.bg,
       ),
       body: Container(
