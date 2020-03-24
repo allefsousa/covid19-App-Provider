@@ -1,7 +1,12 @@
+// To parse this JSON data, do
+//
+//     final historyModel = historyModelFromJson(jsonString);
+
 import 'package:meta/meta.dart';
 import 'dart:convert';
 
-HistoryModel historyModelFromJson(String str) => HistoryModel.fromMap(json.decode(str));
+HistoryModel historyModelFromJson(String str) =>
+    HistoryModel.fromMap(json.decode(str));
 
 String historyModelToJson(HistoryModel data) => json.encode(data.toMap());
 
@@ -15,13 +20,21 @@ class HistoryModel {
   });
 
   factory HistoryModel.fromMap(Map<String, dynamic> json) => HistoryModel(
-    nodes: json["nodes"] == null ? null : List<Node>.from(json["nodes"].map((x) => Node.fromMap(x))),
-    links: json["links"] == null ? null : List<Link>.from(json["links"].map((x) => Link.fromMap(x))),
+    nodes: json["nodes"] == null
+        ? null
+        : List<Node>.from(json["nodes"].map((x) => Node.fromMap(x))),
+    links: json["links"] == null
+        ? null
+        : List<Link>.from(json["links"].map((x) => Link.fromMap(x))),
   );
 
   Map<String, dynamic> toMap() => {
-    "nodes": nodes == null ? null : List<dynamic>.from(nodes.map((x) => x.toMap())),
-    "links": links == null ? null : List<dynamic>.from(links.map((x) => x.toMap())),
+    "nodes": nodes == null
+        ? null
+        : List<dynamic>.from(nodes.map((x) => x.toMap())),
+    "links": links == null
+        ? null
+        : List<dynamic>.from(links.map((x) => x.toMap())),
   };
 }
 
@@ -46,38 +59,38 @@ class Link {
 }
 
 class Node {
-  int id;
+  String id;
   String kasus;
-  String wn;
-  String gender;
-  int umur;
+  String provinsi;
+  String provinsiid;
+  String umur;
   String umurtext;
+  String gender;
+  String genderid;
+  String status;
+  String statusid;
+  String wn;
+  String wnid;
   String pengumuman;
   String penularan;
-  String klaster;
-  int klasterid;
-  int genderid;
-  int wnid;
-  String status;
-  int statusid;
   String rs;
-  int rsid;
+  String rsid;
 
   Node({
     @required this.id,
     @required this.kasus,
-    @required this.wn,
-    @required this.gender,
+    @required this.provinsi,
+    @required this.provinsiid,
     @required this.umur,
     @required this.umurtext,
-    @required this.pengumuman,
-    @required this.penularan,
-    @required this.klaster,
-    @required this.klasterid,
+    @required this.gender,
     @required this.genderid,
-    @required this.wnid,
     @required this.status,
     @required this.statusid,
+    @required this.wn,
+    @required this.wnid,
+    @required this.pengumuman,
+    @required this.penularan,
     @required this.rs,
     @required this.rsid,
   });
@@ -85,18 +98,18 @@ class Node {
   factory Node.fromMap(Map<String, dynamic> json) => Node(
     id: json["id"] == null ? null : json["id"],
     kasus: json["kasus"] == null ? null : json["kasus"],
-    wn: json["wn"] == null ? null : json["wn"],
-    gender: json["gender"] == null ? null : json["gender"],
+    provinsi: json["provinsi"] == null ? null : json["provinsi"],
+    provinsiid: json["provinsiid"] == null ? null : json["provinsiid"],
     umur: json["umur"] == null ? null : json["umur"],
     umurtext: json["umurtext"] == null ? null : json["umurtext"],
-    pengumuman: json["pengumuman"] == null ? null : json["pengumuman"],
-    penularan: json["penularan"] == null ? null : json["penularan"],
-    klaster: json["klaster"] == null ? null : json["klaster"],
-    klasterid: json["klasterid"] == null ? null : json["klasterid"],
+    gender: json["gender"] == null ? null : json["gender"],
     genderid: json["genderid"] == null ? null : json["genderid"],
-    wnid: json["wnid"] == null ? null : json["wnid"],
     status: json["status"] == null ? null : json["status"],
     statusid: json["statusid"] == null ? null : json["statusid"],
+    wn: json["wn"] == null ? null : json["wn"],
+    wnid: json["wnid"] == null ? null : json["wnid"],
+    pengumuman: json["pengumuman"] == null ? null : json["pengumuman"],
+    penularan: json["penularan"] == null ? null : json["penularan"],
     rs: json["rs"] == null ? null : json["rs"],
     rsid: json["rsid"] == null ? null : json["rsid"],
   );
@@ -104,18 +117,18 @@ class Node {
   Map<String, dynamic> toMap() => {
     "id": id == null ? null : id,
     "kasus": kasus == null ? null : kasus,
-    "wn": wn == null ? null : wn,
-    "gender": gender == null ? null : gender,
+    "provinsi": provinsi == null ? null : provinsi,
+    "provinsiid": provinsiid == null ? null : provinsiid,
     "umur": umur == null ? null : umur,
     "umurtext": umurtext == null ? null : umurtext,
-    "pengumuman": pengumuman == null ? null : pengumuman,
-    "penularan": penularan == null ? null : penularan,
-    "klaster": klaster == null ? null : klaster,
-    "klasterid": klasterid == null ? null : klasterid,
+    "gender": gender == null ? null : gender,
     "genderid": genderid == null ? null : genderid,
-    "wnid": wnid == null ? null : wnid,
     "status": status == null ? null : status,
     "statusid": statusid == null ? null : statusid,
+    "wn": wn == null ? null : wn,
+    "wnid": wnid == null ? null : wnid,
+    "pengumuman": pengumuman == null ? null : pengumuman,
+    "penularan": penularan == null ? null : penularan,
     "rs": rs == null ? null : rs,
     "rsid": rsid == null ? null : rsid,
   };
